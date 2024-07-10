@@ -1,0 +1,41 @@
+{
+  "name": "MainProject",
+  "version": "1.0.0",
+  "dependencies": {
+    "@emotion/is-prop-valid": "^1.2.2",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "animate.css": "^4.1.1",
+    "copy-webpack-plugin": "^12.0.2",
+    "core-js": "^3.37.1",
+    "css-loader": "^7.1.1",
+    "framer-motion": "^11.2.11",
+    "html-webpack-plugin": "^5.6.0",
+    "lodash": "^4.17.21",
+    "node-fetch": "^3.3.2",
+    "phaser": "^3.80.1",
+    "phaser3-rex-plugins": "^1.80.1",
+    "react": "^18.3.1",
+    "react-countup": "^6.5.3",
+    "react-dom": "^18.3.1",
+    "socket.io-client": "^4.7.5",
+    "style-loader": "^4.0.0",
+    "text-icons": "^1.1.0",
+    "webfontloader": "^1.6.28",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4",
+    "zod": "^3.23.8"
+  },
+  "scripts": {
+    "build": "npx webpack build",
+    "start:dev": "npx webpack serve"
+  },
+  "devDependencies": {
+    "process": "^0.11.10",
+    "telegram-webapps": "^7.2.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.5"
+  }
+}
