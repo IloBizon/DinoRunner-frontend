@@ -22,7 +22,7 @@ export class AuthManager
     async authorizeUser(): Promise<string>
     {
         const WebApp = Telegram.WebApp;
-        const response = await fetch('https://192.168.0.222:5000/auth/login', {
+        const response = await fetch('https://89.248.207.120:5000/auth/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -33,7 +33,7 @@ export class UserManager
     {
         if (!this.user)
         {
-            const response = await fetch('https://192.168.0.222:5000/users/get-user', {
+            const response = await fetch('https://89.248.207.120:5000/users/get-user', {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${this.authManager.getAuthToken()}`

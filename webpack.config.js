@@ -54,11 +54,7 @@ module.exports = {
 
     devServer: {
         server: {
-            type: 'https',
-            options: {
-                key: readFileSync('Z:\\Projects\\MainGame\\API\\secrets\\key.pem'),
-                cert: readFileSync('Z:\\Projects\\MainGame\\API\\secrets\\cert.pem'),
-            }
+            type: 'http',
         },
         static: {
             directory: path.join(__dirname, 'dist'), // Каталог для статики

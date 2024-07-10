@@ -50,7 +50,7 @@ export default class MainScene extends Phaser.Scene
 
     create()
     {
-        this.socket = io('wss://192.168.0.222:5000/socket', {
+        this.socket = io('wss://89.248.207.120:5000/socket', {
             auth: {
                 token: AuthManager.getInstance().getAuthToken()
             }
