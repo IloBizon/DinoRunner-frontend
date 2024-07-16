@@ -7,6 +7,8 @@ import Background from "../types/background/background";
 import Ground from "../types/ground";
 import {AuthManager} from "../classes/authManager";
 import {CoinManager} from "../classes/coinManager";
+import {env} from "../../env";
+import * as process from "node:process";
 
 export default class MainScene extends Phaser.Scene
 {
@@ -50,7 +52,9 @@ export default class MainScene extends Phaser.Scene
 
     create()
     {
-        this.socket = io('wss://89.248.207.120:5000/socket', {
+        const backendIP: string = env.BACKEND_IP;
+
+        this.socket = io(`wss://${backendIP}:5000/socket`, {
             auth: {
                 token: AuthManager.getInstance().getAuthToken()
             }

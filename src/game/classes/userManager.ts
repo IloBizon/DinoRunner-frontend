@@ -1,4 +1,5 @@
 import {AuthManager} from "./authManager";
+import {env} from "../../env";
 
 interface User
 {
@@ -33,7 +34,9 @@ export class UserManager
     {
         if (!this.user)
         {
-            const response = await fetch('https://89.248.207.120:5000/users/get-user', {
+            const backendIP: string = env.BACKEND_IP;
+            const url: string = `https://${backendIP}/users/get-user'`;
+            const response = await fetch(url, {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${this.authManager.getAuthToken()}`

@@ -1,3 +1,5 @@
+import {env} from "../../env";
+
 export class AuthManager
 {
 
@@ -22,7 +24,9 @@ export class AuthManager
     async authorizeUser(): Promise<string>
     {
         const WebApp = Telegram.WebApp;
-        const response = await fetch('https://89.248.207.120:5000/auth/login', {
+        const backendIP: string = env.BACKEND_IP;
+        const url: string = `https://${backendIP}/auth/login`;
+        const response = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
