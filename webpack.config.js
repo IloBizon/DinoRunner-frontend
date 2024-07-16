@@ -2,6 +2,7 @@ const path = require('path'); // Импортируем модуль "path" дл
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const {readFileSync} = require("fs");
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
     entry: [
@@ -9,6 +10,7 @@ module.exports = {
         './src/index.css',
     ],
     output: {
+
         filename: 'bundle.js', // Имя выходного файла сборки
         path: path.resolve(__dirname, 'dist'), // Путь для выходного файла сборки
         publicPath: '',
@@ -49,7 +51,7 @@ module.exports = {
                 {from: "static", to: 'static'},
             ],
         }),
-
+        new Dotenv()
     ],
 
     devServer: {
