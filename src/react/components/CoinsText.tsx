@@ -17,6 +17,7 @@ export default function CoinsText({coins}: CoinsTextProps)
     async function getCoins()
     {
         const coins = await CoinManager.getInstance().getCoins()
+        Telegram.WebApp.showAlert(`Coins: ${coins}`)
         updateText(coins)
     }
 
