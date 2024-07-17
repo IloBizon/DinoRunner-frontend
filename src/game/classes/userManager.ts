@@ -33,7 +33,7 @@ export class UserManager
     {
         if (!this.user)
         {
-            const url: string = `https://ilobizon.space/api/users/get-user'`;
+            const url: string = `https://ilobizon.space/api/users/get-user`;
             const response = await fetch(url, {
                 method: 'GET',
                 headers: {
