@@ -23,7 +23,7 @@ export class AuthManager
     async authorizeUser(): Promise<string>
     {
         const WebApp = Telegram.WebApp;
-        const backendIP: string = process.env.BACKEND_IP;
+        const backendIP: string = process.env.API_IP;
         const url: string = `https://${backendIP}/auth/login`;
         const response = await fetch(url, {
             method: 'POST',

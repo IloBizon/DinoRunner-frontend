@@ -33,7 +33,7 @@ export class UserManager
     {
         if (!this.user)
         {
-            const backendIP: string = process.env.BACKEND_IP;
+            const backendIP: string = process.env.API_IP;
             const url: string = `https://${backendIP}/users/get-user'`;
             const response = await fetch(url, {
                 method: 'GET',
