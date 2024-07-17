@@ -33,8 +33,7 @@ export class UserManager
     {
         if (!this.user)
         {
-            const backendIP: string = process.env.API_IP;
-            const url: string = `https://${backendIP}/users/get-user'`;
+            const url: string = `https://ilobizon.space/api/users/get-user'`;
             const response = await fetch(url, {
                 method: 'GET',
                 headers: {
