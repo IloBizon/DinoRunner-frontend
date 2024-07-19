@@ -24,7 +24,8 @@ export class AuthManager
     {
         const WebApp = Telegram.WebApp;
 
-        const url: string = `https://ilobizon.space/api/auth/login`;
+        const backendIP = process.env.BACKEND_IP;
+        const url: string = `https://${backendIP}/auth/login`;
         const response = await fetch(url, {
             method: 'POST',
             headers: {
