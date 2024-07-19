@@ -6,6 +6,8 @@ import './index.css'
 
 
 const WebApp = Telegram.WebApp;
+WebApp.expand()
+WebApp.enableClosingConfirmation();
 const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 )

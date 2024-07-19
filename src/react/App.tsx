@@ -49,6 +49,7 @@ function App()
             {
                 setGame(game)
                 setIsGameLoaded(true)
+                Telegram.WebApp.ready()
             }}>
             </Game>
             {isGameLoaded && <CoinsText coins={coins}></CoinsText>}
