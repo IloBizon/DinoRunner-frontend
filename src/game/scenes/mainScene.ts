@@ -50,8 +50,8 @@ export default class MainScene extends Phaser.Scene
 
     create()
     {
-
-
+        const backendIP = process.env.BACKEND_IP;
+        console.log(backendIP);
         this.socket = io(`wss://ilobizon.space/socket`, {
             auth: {
                 token: AuthManager.getInstance().getAuthToken()
