@@ -65,11 +65,10 @@ body {
     justify-content: center;
     left: 0;
     right: 0;
-    padding-bottom: 12vh;
+    padding-bottom: 15vh;
 }
 
 .startButton {
-    z-index: 1;
     background-color: #FFBC00;
     font-family: tilda-sans, serif;
     color: #FFFFFF;
@@ -81,8 +80,6 @@ body {
     box-shadow: 0 0.4vh 0 #B78300;
     transition: transform 0.5s ease;
     height: 10vh;
-
-
 }
 
 .startButton:active {
@@ -90,45 +87,43 @@ body {
 }
 
 .nav {
-    visibility: hidden;
     align-self: center;
-    z-index: 5;
     overflow: hidden;
     position: fixed;
     bottom: 0;
-    height: 170px;
+    height: 11vh;
     background-color: rgba(84, 84, 84, 0.64);
     display: flex;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
+    border-top-right-radius: 3vh;
+    border-top-left-radius: 3vh;
     width: 100%;
     box-sizing: border-box;
     overflow-x: auto;
 }
 
 .nav__link {
-
     display: flex;
     flex-direction: column;
     align-items: center;
     flex-grow: 1;
-    min-width: 50px;
+    min-width: 1vw;
     width: 100%;
     justify-content: center;
     overflow: hidden;
     white-space: nowrap;
-    font: 700 30px "M PLUS 1p";
+    font: 700 2.6vh "M PLUS 1p";
     color: #FFFFFF;
     text-decoration: none;
     -webkit-tap-highlight-color: transparent;
 }
 
 .separator {
-    height: 100px;
+    height: 7vh;
+    width: 1vw;
     align-self: center;
 }
 
 .nav__icon {
-    max-width: 67px;
+    max-width: 5.4vh;
     max-height: 67px;
 }

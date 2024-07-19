@@ -5,6 +5,7 @@ import Button from "./components/Button";
 import 'animate.css'
 import {motion} from "framer-motion"
 import MainScene from "../game/scenes/mainScene";
+import BottomMenu from "./components/BottomMenu";
 
 
 const startButtonAnimationVariants = {
@@ -58,7 +59,7 @@ function App()
                     variants={startButtonAnimationVariants}
                     animate={isGameStarted ? "hidden" : "visible"}
                     initial="hidden"
-                    transition={{type: "spring", stiffness: 60}}
+                    transition={{type: "spring", stiffness: 40}}
                 >
                     <Button className={'startButton'} disabled={false} onClick={() =>
                     {
@@ -68,8 +69,7 @@ function App()
                     }}>START</Button>
                 </motion.div>
             }
-
-
+            {isGameLoaded && <BottomMenu hidden={isGameStarted}></BottomMenu>}
         </>
     )
 }

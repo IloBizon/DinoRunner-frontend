@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 const {readFileSync} = require("fs");
 const Dotenv = require('dotenv-webpack');
+const fs = require("node:fs");
 
 module.exports = {
     entry: [
@@ -56,7 +57,11 @@ module.exports = {
 
     devServer: {
         server: {
-            type: 'http',
+            type: 'https',
+            options: {
+                key: fs.readFileSync("secrets/privkey.pem"),
+                cert: fs.readFileSync("secrets/fullchain.pem")
+            }
         },
         static: {
             directory: path.join(__dirname, 'dist'), // Каталог для статики
