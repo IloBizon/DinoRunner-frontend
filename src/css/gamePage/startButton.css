@@ -1,0 +1,28 @@
+.startButton-ctn {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    right: 0;
+    padding-bottom: 15vh;
+}
+
+.startButton {
+    background-color: #FFBC00;
+    font-family: tilda-sans, serif;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 9vw;
+    width: 55%;
+    border: none;
+    border-radius: 1vh;
+    box-shadow: 0 0.4vh 0 #B78300;
+    transition: transform 0.5s ease;
+    height: 10vh;
+}
+
+.startButton:active {
+    box-shadow: none;
+}

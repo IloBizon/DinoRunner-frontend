@@ -8,7 +8,6 @@ const fs = require("node:fs");
 module.exports = {
     entry: [
         './src/index.tsx',
-        './src/index.css',
     ],
     output: {
 

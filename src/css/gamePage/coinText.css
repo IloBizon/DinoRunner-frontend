@@ -1,0 +1,22 @@
+.coinTextDiv {
+    font: 900 100px tilda-sans;
+    color: white;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10vh;
+    height: 10vh;
+}
+
+.coinText {
+    z-index: 1;
+    font-size: 7vh;
+}
+
+.coinImage {
+    z-index: 1;
+    height: 7vh;
+    width: 7vh;
+}

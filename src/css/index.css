@@ -1,0 +1,42 @@
+@import "gamePage/bottonMenu.css";
+@import "gamePage/coinText.css";
+@import "gamePage/startButton.css";
+@import "friendsPage/text.css";
+
+
+@font-face {
+    font-family: 'tilda-sans';
+    src: url('../../static/fonts/TildaSans.ttf') format('truetype');
+}
+
+.m-plus-1p-bold {
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.gameContainer {
+    z-index: 0;
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+#root {
+    z-index: 1;
+    width: 100vw;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+
+
+

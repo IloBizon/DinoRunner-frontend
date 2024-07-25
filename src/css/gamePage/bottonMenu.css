@@ -1,0 +1,41 @@
+.nav {
+    align-self: center;
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    height: 11vh;
+    background-color: rgba(84, 84, 84, 0.64);
+    display: flex;
+    border-top-right-radius: 3vh;
+    border-top-left-radius: 3vh;
+    width: 100%;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+.nav__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    min-width: 1vw;
+    width: 100%;
+    justify-content: center;
+    overflow: hidden;
+    white-space: nowrap;
+    font: 700 2.6vh "M PLUS 1p";
+    color: #FFFFFF;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.separator {
+    height: 7vh;
+    width: 1vw;
+    align-self: center;
+}
+
+.nav__icon {
+    max-width: 5.4vh;
+    max-height: 67px;
+}

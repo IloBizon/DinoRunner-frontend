@@ -7,6 +7,7 @@ import Background from "../types/background/background";
 import Ground from "../types/ground";
 import {AuthManager} from "../classes/authManager";
 import {CoinManager} from "../classes/coinManager";
+import {SocketManager} from "../classes/socketManager";
 
 export default class MainScene extends Phaser.Scene
 {
@@ -50,16 +51,9 @@ export default class MainScene extends Phaser.Scene
 
     create()
     {
-        const socketIP = process.env.SOCKET_IP;
-        this.socket = io(`wss://${socketIP}`, {
-            auth: {
-                token: AuthManager.getInstance().getAuthToken()
-            }
-        });
+        this.socket = SocketManager.getInstance().getSocket();
+
         this.initSocket();
-
-        this.socket.emit('playerJoin');
-
         if (this.isDebugOn)
         {
             this.turnOnDebug()

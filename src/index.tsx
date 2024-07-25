@@ -2,7 +2,8 @@ import {AuthManager} from "./game/classes/authManager";
 import ReactDOM from "react-dom/client";
 import React from "react";
 import App from './react/App';
-import './index.css'
+import './css/index.css'
+import {BrowserRouter} from "react-router-dom";
 
 
 const WebApp = Telegram.WebApp;
@@ -12,7 +13,9 @@ const root = ReactDOM.createRoot(
     document.getElementById('root') as HTMLElement
 )
 root.render(
-    <App/>
+    <BrowserRouter>
+        <App/>
+    </BrowserRouter>
 )
 AuthManager.getInstance().authorizeUser().then((t) =>
 {

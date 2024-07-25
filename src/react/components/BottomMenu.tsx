@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import {useEffect, useRef, useState} from "react";
 import React from "react";
+import {Link} from "react-router-dom";
 
 interface BottonMenuProps {
     hidden: boolean
@@ -45,11 +46,11 @@ export default function BottomMenu({hidden}: BottonMenuProps) {
                     <span className="nav__text">Boosts</span>
                 </a>
                 <img src="../static/images/UI/navigationBar/separator.png" className="separator"/>
-                <a href="#" className="nav__link">
+                <Link to={'/friends'} className="nav__link">
                     <img src="../static/images/UI/navigationBar/hands.png" className="nav__icon"
                          alt="Profile icon"></img>
                     <span className="nav__text">Friends</span>
-                </a>
+                </Link>
             </motion.nav>
         </>
     )
