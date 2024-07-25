@@ -9,7 +9,7 @@ interface BottonMenuProps {
 
 const animationVariants = {
     visible: {y:0},
-    hidden: {y:"11vh"},
+    hidden: {y:"13vh"},
 }
 
 export default function BottomMenu({hidden}: BottonMenuProps) {
