@@ -1,5 +1,4 @@
 
-
 body {
     background: #000000;
 
@@ -25,9 +24,11 @@ body {
     z-index: 1;
 
     padding-top: 7vh;
-    width: 100%;
+    width: 100vw;
     display: flex;
     align-items: center;
+    justify-content: center;
+    align-content: center;
     flex-direction: column;
 }
 .friends-main-container .main__text {

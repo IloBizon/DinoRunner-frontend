@@ -37,7 +37,7 @@ export default function CoinsText({coins}: CoinsTextProps)
                 className={'coinTextDiv'}
                 animate={{scale: 1, opacity: 100}}
                 initial={{scale: 0, opacity: 0}}
-                transition={{type: "spring", stiffness: 60}}>
+                transition={{type: "spring", stiffness:60}}>
                 <img src='../../../static/testobj/coin.png' alt="iconImg" className={'coinImage'}/>
                 <div className={'coinText'} ref={countUpRef}></div>
                 {/*<CountUp separator={'.'} duration={3} start={0} end={coins} preserveValue={true}*/}

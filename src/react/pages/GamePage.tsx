@@ -59,7 +59,7 @@ export default function GamePage() {
                     variants={startButtonAnimationVariants}
                     animate={isGameStarted ? "hidden" : "visible"}
                     initial="hidden"
-                    transition={{type: "spring", stiffness: 40}}
+                    transition={{type: "spring", stiffness:60 }}
                 >
                     <Button className={'startButton'} disabled={false} onClick={() =>
                     {

@@ -26,7 +26,7 @@ export default function BottomMenu({hidden}: BottonMenuProps) {
                 variants={animationVariants}
                 initial="hidden"
                 animate={isHidden ? "hidden" : "visible"}
-                transition={{type: "spring",duration: 1 }}>
+                transition={{type: "spring", stiffness: 60 }}>
 
                 <a href="#" className="nav__link">
                     <img src="../static/images/UI/navigationBar/human.png" className="nav__icon"
