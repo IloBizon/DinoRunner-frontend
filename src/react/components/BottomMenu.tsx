@@ -21,37 +21,42 @@ export default function BottomMenu({hidden}: BottonMenuProps) {
 
     return (
         <>
-            <motion.nav
-                className={'nav'}
-                variants={animationVariants}
-                initial="hidden"
-                animate={isHidden ? "hidden" : "visible"}
-                transition={{type: "spring", stiffness: 60 }}>
+            <nav className={'nav-container'}>
+                <motion.nav
+                    className={'nav'}
+                    variants={animationVariants}
+                    initial="hidden"
+                    animate={isHidden ? "hidden" : "visible"}
+                    transition={{type: "spring", stiffness: 60}}>
 
-                <a href="#" className="nav__link">
-                    <img src="../static/images/UI/navigationBar/human.png" className="nav__icon"
-                         alt="Profile icon"></img>
-                    <span className="nav__text">Profile</span>
-                </a>
-                <img src="../static/images/UI/navigationBar/separator.png" className="separator"/>
+                    <a href="#" className="nav__link">
+                        <img src="../static/images/UI/navigationBar/human.png" className="nav__icon"
+                             alt="Profile icon"></img>
+                        <span className="nav__text">Profile</span>
+                    </a>
+                    <img src="../static/images/UI/navigationBar/separator.png" className="separator"/>
 
-                <a href="#" className="nav__link">
-                    <img src="../static/images/UI/navigationBar/coin.png" className="nav__icon" alt="Coin icon"></img>
-                    <span className="nav__text">Earn</span>
-                </a>
-                <img src="../static/images/UI/navigationBar/separator.png" className="separator"/>
-                <a href="#" className="nav__link">
-                    <img src="../static/images/UI/navigationBar/rocket.png" className="nav__icon"
-                         alt="Rocket icon"></img>
-                    <span className="nav__text">Boosts</span>
-                </a>
-                <img src="../static/images/UI/navigationBar/separator.png" className="separator"/>
-                <Link to={'/friends'} className="nav__link">
-                    <img src="../static/images/UI/navigationBar/hands.png" className="nav__icon"
-                         alt="Profile icon"></img>
-                    <span className="nav__text">Friends</span>
-                </Link>
-            </motion.nav>
+                    <a href="#" className="nav__link">
+                        <img src="../static/images/UI/navigationBar/coin.png" className="nav__icon"
+                             alt="Coin icon"></img>
+                        <span className="nav__text">Earn</span>
+                    </a>
+                    <img src="../static/images/UI/navigationBar/separator.png" className="separator"/>
+                    <a href="#" className="nav__link">
+                        <img src="../static/images/UI/navigationBar/rocket.png" className="nav__icon"
+                             alt="Rocket icon"></img>
+                        <span className="nav__text">Boosts</span>
+                    </a>
+                    <img src="../static/images/UI/navigationBar/separator.png" className="separator"/>
+                    <Link to={'/friends'} className="nav__link">
+                        <img src="../static/images/UI/navigationBar/hands.png" className="nav__icon"
+                             alt="Profile icon"></img>
+                        <span className="nav__text">Friends</span>
+                    </Link>
+                </motion.nav>
+
+            </nav>
+
         </>
     )
 
