@@ -4,14 +4,8 @@ import preloadScene from "../../game/scenes/preloadScene";
 import mainScene from "../../game/scenes/mainScene";
 import RexUIPlugin from "phaser3-rex-plugins/templates/ui/ui-plugin";
 import {useGame} from "../hooks/useGame";
-
-interface GameProps
-{
-    onGameLoaded: (game: Phaser.Game) => void
-}
-
-
-export default function Game({onGameLoaded}: GameProps)
+import {setGlobalState, useGlobalState} from "../globalStates";
+export default function Game()
 {
 
     let config = {
@@ -47,17 +41,17 @@ export default function Game({onGameLoaded}: GameProps)
     }
 
     let gameRef = useRef<HTMLDivElement>(null)
+    const [isPhaserGameLoaded] = useGlobalState('isPhaserGameLoaded')
     const game = useGame(config.game, gameRef)
-    const [isGameLoaded, setIsGameLoaded] = useState(false)
-
     useEffect(() =>
     {
         if (game)
         {
             game.events.on('SCENE_CONSTRUCTED', () =>
             {
-                setIsGameLoaded(true)
-                onGameLoaded(game)
+                console.log('Scene constructed event')
+                setGlobalState('isPhaserGameLoaded', true)
+                Telegram.WebApp.ready();
             })
 
         }
@@ -65,7 +59,7 @@ export default function Game({onGameLoaded}: GameProps)
 
     return (
         <>
-            <div hidden={!isGameLoaded} className={'gameContainer'} ref={gameRef}></div>
+            <div hidden={!isPhaserGameLoaded} className={'gameContainer'} ref={gameRef}></div>
         </>
 
     )

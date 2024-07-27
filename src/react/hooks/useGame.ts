@@ -1,23 +1,28 @@
 import React, {useEffect, useState} from 'react'
 import {Game} from 'phaser'
+import {useGlobalState, setGlobalState} from "../globalStates";
+import {GameComponent} from "../../game/classes/gameComponent";
+
 
 export function useGame(
     config: Phaser.Types.Core.GameConfig,
     containerRef: React.MutableRefObject<HTMLDivElement>,
-): Phaser.Game | undefined
+)
 {
-    const [game, setGame] = useState<Game>()
-
+    const [phaserGame] = useGlobalState('phaserGame');
     useEffect(() =>
     {
-        if (!game)
+        if (!phaserGame)
         {
-            const newGame = new Game({...config})
+            console.log('new game')
+            const newGame = GameComponent.getInstance().getGame(config);
             containerRef.current.append(newGame.canvas)
-            setGame(newGame)
+            setGlobalState('phaserGame', newGame);
         }
-    }, [config, containerRef, game])
+        else {
+            containerRef.current.append(phaserGame.canvas)
+        }
+    }, [])
 
-
-    return game
+    return phaserGame;
 }

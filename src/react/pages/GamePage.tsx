@@ -6,6 +6,7 @@ import CoinsText from "../components/CoinsText";
 import Button from "../components/Button";
 import MainScene from "../../game/scenes/mainScene";
 import BottomMenu from "../components/BottomMenu";
+import {useGlobalState} from "../globalStates";
 
 const startButtonAnimationVariants = {
     visible: {scale: 1, opacity: 100},
@@ -14,10 +15,10 @@ const startButtonAnimationVariants = {
 
 
 export default function GamePage() {
-    const [isGameLoaded, setIsGameLoaded] = useState(false)
+    const [isGameLoaded] = useGlobalState('isPhaserGameLoaded');
     const [isGameStarted, setIsGameStarted] = useState(false)
     const [coins, setCoins] = useState(0);
-    const [game, setGame] = useState<Phaser.Game>(null);
+    const [game] = useGlobalState('phaserGame');
 
     useEffect(() =>
     {
@@ -39,18 +40,10 @@ export default function GamePage() {
 
         }
 
-    })
-
-
+    }, [game])
     return (
         <>
-            <Game onGameLoaded={(game) =>
-            {
-                setGame(game)
-                setIsGameLoaded(true)
-                Telegram.WebApp.ready()
-            }}>
-            </Game>
+            <Game/>
             {isGameLoaded && <CoinsText coins={coins}></CoinsText>}
             {
                 isGameLoaded &&
@@ -64,6 +57,7 @@ export default function GamePage() {
                     <Button className={'startButton'} disabled={false} onClick={() =>
                     {
                         setIsGameStarted(true)
+                        // @ts-ignore
                         game.scene.getScene<MainScene>('mainScene').initGameStart();
                         console.log('Click')
                     }}>START</Button>
