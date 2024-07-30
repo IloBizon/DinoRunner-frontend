@@ -52,7 +52,7 @@ export default function FriendsPage() {
 
     function shareButtonOnClick()
     {
-
+        Telegram.WebApp.openLink(`https://t.me/share/url?url=https://t.me/runnerton_bot/join?inviterId=${Telegram.WebApp.initDataUnsafe.user.id}&text=Play TONRunner with me!`)
     }
 
 
