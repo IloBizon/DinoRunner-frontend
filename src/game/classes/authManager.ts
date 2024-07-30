@@ -27,7 +27,7 @@ export class AuthManager
         const queryParams = new URLSearchParams(window.location.search);
 
         const backendIP = process.env.BACKEND_IP;
-        Telegram.WebApp.showAlert(queryParams.get('inviterId'))
+        console.log(queryParams)
         const url: string = `https://${backendIP}/auth/login`;
         const response = await fetch(url, {
             method: 'POST',
