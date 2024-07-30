@@ -1,0 +1,39 @@
+.friend--note--container{
+    padding-left: 0;
+    margin-top: 1.5vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+
+.friend__avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+    font-size: 3vh;
+    color: white;
+    margin-left: 4vw;
+
+    background: #4E4E4E;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 100%;
+}
+
+.friend__name {
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-left: 3vw;
+}
+.friend__earn {
+    font-family: "M PLUS 1p", sans-serif;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-left: auto;
+    margin-right: 4vw;
+}

@@ -24,6 +24,8 @@ export class AuthManager
     {
         const WebApp = Telegram.WebApp;
 
+        const queryParams = new URLSearchParams(window.location.search);
+
         const backendIP = process.env.BACKEND_IP;
         const url: string = `https://${backendIP}/auth/login`;
         const response = await fetch(url, {
@@ -31,7 +33,7 @@ export class AuthManager
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({initData: WebApp.initData})
+            body: JSON.stringify({initData: WebApp.initData, inviterId: queryParams.get('inviterId')})
         })
 
         if (response.status == 401)

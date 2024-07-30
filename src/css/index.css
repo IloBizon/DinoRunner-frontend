@@ -2,6 +2,7 @@
 @import "gamePage/coinText.css";
 @import "gamePage/startButton.css";
 @import "friendsPage/text.css";
+@import "friendsPage/friendNote.css";
 
 
 @font-face {
@@ -28,12 +29,12 @@
 
 #root {
     z-index: 1;
-    width: 100vw;
 }
 
 
 html,
 body {
+    width: 100%;
     overflow-x: hidden;
     margin: 0;
     padding: 0;
