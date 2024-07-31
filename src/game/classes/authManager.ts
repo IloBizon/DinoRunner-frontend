@@ -27,13 +27,14 @@ export class AuthManager
         const queryParams = new URLSearchParams(window.location.search);
         const backendIP = process.env.BACKEND_IP;
         console.log(queryParams)
+
         const url: string = `https://${backendIP}/auth/login`;
         const response = await fetch(url, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({initData: WebApp.initData, inviterId: 123})
+            body: JSON.stringify({initData: WebApp.initData, inviterId: queryParams.get('inviterId')}),
         })
 
         if (response.status == 401)
