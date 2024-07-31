@@ -15,7 +15,6 @@ export default function FriendsPage() {
 
     });
     Telegram.WebApp.onEvent('backButtonClicked', async function() {
-        document.body.style.paddingBottom = "0";
         document.body.style.overflowY = "hidden";
         await sleep(500)
         navigate('/')
@@ -46,7 +45,6 @@ export default function FriendsPage() {
 
         document.body.style.overflowY = "scroll";
         getFriends();
-        //document.body.style.paddingBottom = "12vh";
         }, []);
 
 
@@ -75,7 +73,9 @@ export default function FriendsPage() {
 
 
             <p className={'friends-counter'}>{friends.length} friends</p>
-           {friends.map(friend => <FriendNote userName={friend.userName} bringToInviter={friend.bringToInviter} />)}
+           <ul className={'friends-container'}>
+               {friends.map(friend => <FriendNote userName={friend.userName} bringToInviter={friend.bringToInviter} />)}
+           </ul>
         </>
     )
 
