@@ -34,7 +34,7 @@ export class AuthManager
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({initData: WebApp.initData, inviterId: queryParams.get('inviterId')}),
+            body: JSON.stringify({initData: WebApp.initData}),
         })
 
         if (response.status == 401)
